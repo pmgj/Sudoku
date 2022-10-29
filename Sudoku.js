@@ -2,19 +2,50 @@ import Cell from "./Cell.js";
 import EndOfGame from "./EndOfGame.js";
 
 export default class Sudoku {
-    constructor() {
+    constructor(level = 0) {
         this.rows = 9;
         this.cols = 9;
-        this.board = this.createBoard();
-        this.initialState = this.createBoard();    
+        this.initialState = null;
+        this.board = this.createBoard(level);
     }
-    createBoard() {
-        //        return [[9, 4, 7, 1, 6, 2, 3, 5, 8], [6, 1, 3, 8, 5, 7, 9, 2, 4], [8, 5, 2, 4, 9, 3, 1, 7, 6], [1, 2, 9, 3, 8, 4, 5, 6, 7], [5, 7, 8, 9, 2, 6, 4, 3, 1], [3, 6, 4, 7, 1, 5, 2, 8, 9], [2, 9, 1, 6, 3, 8, 7, 4, 5], [7, 8, 5, 2, 4, 1, 6, 9, 3], [4, 3, 6, 5, 7, 9, 8, 1, 2]];
-        //        return [[9, 4, 0, 1, 0, 2, 0, 5, 8], [6, 0, 0, 0, 5, 0, 0, 0, 4], [0, 0, 2, 4, 0, 3, 1, 0, 0], [0, 2, 0, 0, 0, 0, 0, 6, 0], [5, 0, 8, 0, 2, 0, 4, 0, 1], [0, 6, 0, 0, 0, 0, 0, 8, 0], [0, 0, 1, 6, 0, 8, 7, 0, 0], [7, 0, 0, 0, 4, 0, 0, 0, 3], [4, 3, 0, 5, 0, 9, 0, 1, 2]];
-        return [[1, 0, 2, 0, 0, 0, 0, 0, 0], [0, 5, 0, 7, 0, 0, 0, 9, 0], [0, 6, 0, 0, 0, 8, 0, 0, 1], [0, 0, 0, 0, 0, 0, 0, 0, 5], [2, 0, 0, 0, 4, 0, 0, 0, 0], [0, 0, 3, 0, 0, 0, 0, 0, 6], [0, 0, 0, 0, 0, 0, 0, 2, 0], [7, 0, 0, 9, 0, 0, 0, 0, 0], [0, 0, 8, 0, 1, 0, 3, 0, 0]];
+    createBoard(level) {
+        let emptyCells = [31, 41, 46, 51, 56];
+        let temp = Array(this.rows).fill().map(() => Array(this.cols).fill(0));
+        let shuffle = function (array) {
+            let currentIndex = array.length, randomIndex;
+            // While there remain elements to shuffle...
+            while (currentIndex !== 0) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        };
+        let possibilities = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        temp[0] = possibilities;
+        let b = this.solve(temp);
+        for (let i = 0; i < emptyCells[level]; i++) {
+            let row = Math.floor(Math.random() * this.rows);
+            let col = Math.floor(Math.random() * this.cols);
+            if (b[row][col] === 0) {
+                i--;
+            } else {
+                b[row][col] = 0;
+            }
+        }
+        this.initialState = b.map(arr => arr.slice());
+        return b;
+    }
+    reset() {
+        this.board = this.initialState.map(arr => arr.slice());
     }
     getBoard() {
         return this.board;
+    }
+    getInitialState() {
+        return this.initialState;
     }
     onBoard({ x, y }) {
         let inLimit = (value, limit) => value >= 0 && value < limit;
