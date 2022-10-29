@@ -1,34 +1,43 @@
 td {
     text-align: center;
-    width: 2em;
-    height: 2em;
     border: 1px solid #ccc;
-    font-size: 2em;
     font-family: sans-serif;
+    --cell-size: 8vmin;
+    width: clamp(30px, var(--cell-size), 50px);
+    height: clamp(30px, var(--cell-size), 50px);
+    font-size: clamp(1em, 5vmin, 2em);
 }
+
 table {
     margin: 1em auto;
     border-collapse: collapse;
     border: 3px solid black;
 }
+
 caption {
     font-weight: bold;
     font-size: xx-large;
 }
+
 td:nth-child(3n) {
     border-right: 3px solid black;
 }
+
 tr:nth-child(3n) {
     border-bottom: 3px solid black;
 }
-td:last-child, tr:last-child {
-    border-right: none;	
+
+td:last-child,
+tr:last-child {
+    border-right: none;
     border-bottom: none;
 }
+
 div {
     margin-top: 1em;
-    text-align: center;    
+    text-align: center;
 }
+
 .blocked {
     background-color: #eee;
 }
