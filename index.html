@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sudoku</title>
+    <meta charset="UTF-8" />
+    <script type="module" src="GUI.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="icon" type="image/svg" href="favicon.svg" />
+</head>
+
+<body>
+    <table>
+        <caption>Sudoku</caption>
+        <tbody></tbody>
+    </table>
+    <form>
+        <div>
+            <input type="button" value="Hint" name="hint" title="Fills an empty space, if possible" />
+            <input type="button" value="Solve" name="solve" title="Solves the Sudoku (may take some time)" />
+            <input type="button" value="Reset" name="reset" />
+            <select name="level" title="Informe o nível do jogo">
+                <option value="0">Easy</option>
+                <option value="1">Medium</option>
+                <option value="2">Hard</option>
+            </select>
+        </div>
+    </form>
+    <div id="message"></div>
+</body>
+
+</html>

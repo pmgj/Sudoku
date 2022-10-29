@@ -1,0 +1,11 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+    <text x="2" y="6" font-size="6px" font-weight="bold" fill="blue">1</text>
+    <text x="10" y="6" font-size="6px" font-weight="bold" fill="blue">6</text>
+    <text x="2" y="14" font-size="6px" font-weight="bold" fill="blue">8</text>
+    <text x="10" y="14" font-size="6px" font-weight="bold" fill="blue">7</text>
+    <rect x="0" y="0" width="8" height="8" fill="transparent" stroke="green" stroke-width="1" />
+    <rect x="8" y="0" width="8" height="8" fill="transparent" stroke="green" stroke-width="1" />
+    <rect x="0" y="8" width="8" height="8" fill="transparent" stroke="green" stroke-width="1" />
+    <rect x="8" y="8" width="8" height="8" fill="transparent" stroke="green" stroke-width="1" />    
+</svg>
