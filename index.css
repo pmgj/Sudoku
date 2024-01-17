@@ -33,9 +33,9 @@ tr:last-child {
     border-bottom: none;
 }
 
-div {
-    margin-top: 1em;
-    text-align: center;
+.row {
+    margin: 0em auto;
+    width: 400px;
 }
 
 .blocked {
