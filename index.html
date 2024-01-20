@@ -17,20 +17,22 @@
         <caption class="caption-top text-center text-black">Sudoku</caption>
         <tbody></tbody>
     </table>
-    <form class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="col-12"><input type="button" value="Hint" name="hint" title="Fills an empty space, if possible"
-                class="btn btn-primary"></div>
-        <div class="col-12"><input type="button" value="Solve" name="solve"
-                title="Solves the Sudoku (may take some time)" class="btn btn-info"></div>
-        <div class="col-12"><input type="button" value="Reset" name="reset" class="btn btn-secondary"></div>
-        <div class="col-12">
-            <select name="level" title="Inform the level of difficulty" class="form-select">
-                <option value="0">Very Easy</option>
-                <option value="1">Easy</option>
-                <option value="2">Medium</option>
-                <option value="3">Difficult</option>
-                <option value="4">Evil</option>
-            </select>
+    <form class="container">
+        <div class="d-flex justify-content-center mt-2">
+            <div class="p-1"><input type="button" value="Hint" name="hint" title="Fills an empty space, if possible"
+                    class="btn btn-primary btn-sm"></div>
+            <div class="p-1"><input type="button" value="Solve" name="solve"
+                    title="Solves the Sudoku (may take some time)" class="btn btn-info btn-sm"></div>
+            <div class="p-1"><input type="button" value="Reset" name="reset" class="btn btn-secondary btn-sm"></div>
+            <div class="p-1">
+                <select name="level" title="Inform the level of difficulty" class="form-select form-select-sm">
+                    <option value="0">Very Easy</option>
+                    <option value="1">Easy</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Difficult</option>
+                    <option value="4">Evil</option>
+                </select>
+            </div>
         </div>
     </form>
     <div id="message"></div>

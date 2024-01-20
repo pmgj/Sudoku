@@ -33,11 +33,10 @@ tr:last-child {
     border-bottom: none;
 }
 
-.row {
-    margin: 0em auto;
-    width: 400px;
-}
-
 .blocked {
     background-color: #eee;
+}
+
+#message {
+    text-align: center;
 }
