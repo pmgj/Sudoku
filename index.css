@@ -2,7 +2,7 @@ td {
     text-align: center;
     border: 1px solid #ccc;
     font-family: sans-serif;
-    --cell-size: 8vmin;
+    --cell-size: 10vmin;
     width: clamp(30px, var(--cell-size), 50px);
     height: clamp(30px, var(--cell-size), 50px);
     font-size: clamp(1em, 5vmin, 2em);
