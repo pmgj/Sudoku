@@ -14,11 +14,6 @@ table {
     border: 3px solid black;
 }
 
-caption {
-    font-weight: bold;
-    font-size: xx-large;
-}
-
 td:nth-child(3n) {
     border-right: 3px solid black;
 }
@@ -35,8 +30,4 @@ tr:last-child {
 
 .blocked {
     background-color: #eee;
-}
-
-#message {
-    text-align: center;
 }
